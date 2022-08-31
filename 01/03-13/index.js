@@ -1,0 +1,1 @@
+console.log(`Run exersices by using 'node eX.js' where X is the number of exercise (03-13).`)
