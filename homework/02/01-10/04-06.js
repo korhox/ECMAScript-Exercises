@@ -1,4 +1,4 @@
-// did this at 04, using anon functions I think
+// did this at 04, using anon functions I think for 05, and arrows for 06...
 
 const isPositiveInteger = (value, onSuccess, onError) => { value >= 0 ? onSuccess() : onError(); }
 
