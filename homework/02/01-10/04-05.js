@@ -1,3 +1,5 @@
+// did this at 04, using anon functions I think
+
 const isPositiveInteger = (value, onSuccess, onError) => { value >= 0 ? onSuccess() : onError(); }
 
 isPositiveInteger(5, () => {
