@@ -1,1 +1,0 @@
-console.log(`Run exersices by using 'node X.js' where X is the number of exercise.`)
