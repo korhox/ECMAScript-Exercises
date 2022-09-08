@@ -1,16 +1,21 @@
 const fs = require('fs')
 
-let arg = String(process.argv.slice(2)[0]);
+let originalFname = String(process.argv.slice(2)[0]);
+let copyFname = String(process.argv.slice(2)[1]);
 
-if (!arg.match(/^.*\.(txt)$/g)) {
-    console.log("Please enter text file with the extension .txt.");
+if (!originalFname.match(/^.*\.(txt)$/g)) {
+    console.log("Please enter the first text file with the extension .txt.");
+    process.exit(1);
+}
+if (!copyFname.match(/^.*\.(txt)$/g)) {
+    console.log("Please enter the second text file with the extension .txt.");
     process.exit(1);
 }
 
-fs.stat(arg, function (err) {
+fs.stat(originalFname, function (err) {
     if (err == null) {
-        fs.readFile(arg, "utf-8", (err, data) => {
-            console.log(data);
+        fs.copyFile(originalFname, copyFname, () => {
+            console.log("File copied successfully!");
         });
     } else {
         console.log("Could not read the file. Are you sure it exists?");
