@@ -8,6 +8,7 @@
     },
     "author": "",
     "license": "MIT",
+    "type": "module",
     "devDependencies": {
         "eslint": "^8.23.0"
     },
