@@ -1,26 +1,30 @@
+
 function makeCalculation() {
     function asynFunc(resolve, reject) {
         setTimeout(() => {
-            console.log('calculating stuff')
-            const division = 5 / 5
-            resolve(division)
-        }, 1000)
+            console.log("calculating stuff");
+            const division = 5 / 5;
+            resolve(division);
+        }, 1000);
     }
-    const p = new Promise(asynFunc)
-    return p
+    const p = new Promise(asynFunc);
+    return p;
 }
 
 function sendStuffToBackend(result) {
     function asynFunc(resolve, reject) {
         setTimeout(() => {
-            console.log(`sending to backend ${result}`)
-            resolve('done')
-        }, 1000)
+            console.log(`sending to backend ${result}`);
+            resolve("done");
+        }, 1000);
     }
-    const p = new Promise(asynFunc)
-    return p
+    const p = new Promise(asynFunc);
+    return p;
 }
 
+// make the calculation that takes time and when ready, invoke the
+// arrow function.
+
 makeCalculation()
-    .then(sum => sendStuffToBackend(sum))
-    .then(msg => console.log(msg))
+    .then((sum) => sendStuffToBackend(sum))
+    .then((msg) => console.log(msg));
