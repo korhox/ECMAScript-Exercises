@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>04</title>
+        <link rel="stylesheet" href="vs2015.min.css">
+        <script src="highlight.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', (event) => { document.querySelectorAll('pre code').forEach((el) => { hljs.highlightElement(el); }); });
+        </script>
+        <style>
+            body,
+            html,
+            pre {
+                margin: 0;
+                padding: 0;
+                height: calc(100% - 14px);
+            }
+
+            code {
+                padding: 20px !important;
+                font-family: 'FiraCode Nerd Font Mono', 'Courier New', Courier, monospace;
+                height: 100%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <pre><code id="block"></code></pre>
+        <script>
+            const addToPage = (content) => {
+                document.getElementById("block").innerHTML = document.getElementById("block").innerHTML + content + "\n";
+            }
+
+            console.log(this) // outputs this object, which is window in this context to the console
+            console.log(this == window) // outputs true, since true is window object
+
+            addToPage("Hello World!");
+
+            for (const prop in window) {
+                addToPage("const " + prop + " = " + window[prop]);
+
+            }
+        </script>
+    </body>
+
+</html>
