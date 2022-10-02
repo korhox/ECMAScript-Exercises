@@ -1,8 +1,12 @@
 function Person(fname, lname) {
-    if (!(this instanceof Person)) {
+    if (this instanceof Person) {
+        this.fname = fname;
+        this.lname = lname;
+
+        console.log(this instanceof Person);
+    } else {
         throw new TypeError("Cannot call a class as a function");
     }
-    console.log(this instanceof Person);
 }
 
 var obj1 = new Person('jack', 'smith');      // creates new object Person with the fname and lname variables

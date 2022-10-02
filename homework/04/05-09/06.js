@@ -1,4 +1,6 @@
 function Person(fname, lname) {
+    this.fname = fname;
+    this.lname = lname;
     console.log(this instanceof Person)
 }
 
